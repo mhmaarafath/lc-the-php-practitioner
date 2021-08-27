@@ -120,7 +120,13 @@ class Task {
     public $complete;
 }
 
+class Database{
+	public static make(){
 
+	}
+}
+
+By static method we can use class as Database::make without making an instance. 
 
 
 
