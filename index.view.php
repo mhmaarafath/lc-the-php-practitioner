@@ -9,7 +9,7 @@
 <body>
     <ul>
         <?php foreach($tasks as $task): ?>
-            <?php if($task->isComplete()): ?>
+            <?php if($task->completed): ?>
                 <strike>
                 <li><?=ucfirst($task->description)?></li>
                 </strike>

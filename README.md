@@ -91,6 +91,37 @@ insert into todos (description, completed) values ('goto store', false);
 
 select * from todos;
 
+PDO is PHP inbuilt class. So we can call directly new PDO();
+
+new PDO('mysql:host=127.0.0.1; dbname=lc_the_php_practitioner', 'root', 'password');
+
+
+Try to coonect PDO if not catch the exception throws
+
+try {
+	$pdo = new PDO('mysql:host=127.0.0.1; dbname=lc_the_php_practitioner', 'root', 'password');	
+} catch (Exception $e) {
+	die('could not connect');
+}
+
+
+$statement = $pdo->prepare('select * from todos');
+$statement->execute();
+$results = $statement->fetchAll(PDO::FETCH_OBJ);
+
+We can fetch the result to a call
+$results = $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
+
+Task.php
+
+<?php
+class Task {
+    public $description;
+    public $complete;
+}
+
+
+
 
 
 

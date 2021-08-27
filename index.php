@@ -1,35 +1,17 @@
 <?php
 require('functions.php');
-class Task {
-    public $description;
-    protected $completed = false;
+require('Task.php');
 
-    public function __construct($description){
-        $this->description = $description;
-    }
-
-    public function complete(){
-        $this->completed = true;
-    }
-
-    public function isComplete(){
-        return $this->completed;
-    }
-
-    public function getMemoryUsage(){
-        return memory_get_usage();
-    }
+try {
+	$pdo = new PDO('mysql:host=127.0.0.1; dbname=lc_the_php_practitioner', 'root', 'password');	
+} catch (Exception $e) {
+	die('could not connect');
 }
 
 
-$tasks = [
-    new Task('wake up'),
-    new Task('get a wash'),
-    new Task('go to school')
-];
-
-$tasks[0]->complete();
-
+$statement = $pdo->prepare('select * from todos');
+$statement->execute();
+$tasks = $statement->fetchAll(PDO::FETCH_CLASS, 'Task');
 
 require('index.view.php');
 
