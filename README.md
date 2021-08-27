@@ -129,6 +129,31 @@ class Database{
 By static method we can use class as Database::make without making an instance. 
 
 
+Contractor needs electricion, plumber, designer to do a task
+
+So we hire contractor with all these three
+
+Yes. Contractor also can do these three. But the task will be little bit slower. 
+
+
+class Contractor {
+
+	private $plumber;
+	private $electrician;
+	private $designer;
+
+	public function __construct($plumber, $electrician, $designer){
+		$this->plumber = $plumber;
+		$this->electrician = $electrician;
+		$this->designer = $designer;
+	}
+
+	public function performWork(){
+		// plumber, electrician, designer
+	}
+}
+
+
 
 
 
