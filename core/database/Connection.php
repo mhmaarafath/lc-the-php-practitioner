@@ -6,9 +6,10 @@ class Connection {
             return new PDO(
                 $config['type']. ":host=". $config['host']."; dbname=".$config['name'], 
                 $config['username'], 
-                $config['password']
+                $config['password'],
+                $config['options']
             );	
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
             die('could not connect');
         }    
     }
