@@ -153,6 +153,16 @@ class Contractor {
 	}
 }
 
+You can call static methods as ClassName::method()
+Calling same class in static function has to call by 'new static'
+In order to method chaining we have to return same class instance by 'return $this' in static method we can do it by 'return new static'
+
+public static function load($file){
+	$router = new static;
+	require $file;
+	return $router;
+}
+
 
 
 
