@@ -164,6 +164,43 @@ public static function load($file){
 }
 
 
+//array functions
+
+class Post {
+    public $name;
+    public $status;
+
+    public function __construct($name, $status){
+        $this->name = $name;
+        $this->status = $status;
+    }
+}
+
+$posts = [
+    new Post('first post', true),
+    new Post('second post', true),
+    new Post('third post', true),
+    new Post('last post', false),
+];
+
+//Filter function for an array
+$publishedPosts = array_filter($posts, function($post){
+    return $post->status == true;
+});
+
+//Iterate throug array change the collectin value
+array_map(function($post){
+    return $post->status = true;
+}, $posts);
+
+//Return only single column to an array
+$names = array_column($posts, 'name');
+
+
+echo '<pre>';
+var_dump($posts);
+echo '</pre>';
+
 
 
 
