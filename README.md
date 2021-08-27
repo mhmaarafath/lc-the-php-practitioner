@@ -73,7 +73,23 @@ foreach($names as $name){
 	//Code
 <?php endif; ?>
 
+create database lc_the_php_practitioner;
 
+use database lc_the_php_practitioner;
+
+create table todos (description text, completed boolean);
+
+drop table todos;
+
+create table todos (description text NOT NULL, completed boolean NOT NULL);
+
+drop table todos;
+
+create table todos (id integer PRIMARY KEY AUTO_INCREMENT, description text NOT NULL, completed boolean NOT NULL);
+
+insert into todos (description, completed) values ('goto store', false);
+
+select * from todos;
 
 
 
