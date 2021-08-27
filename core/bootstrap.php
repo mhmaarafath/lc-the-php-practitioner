@@ -10,3 +10,4 @@ require 'core/Router.php';
 require 'core/Request.php';
 
 $app['database'] = new QueryBuilder(Connection::make($app['config']['database']));
+require Router::load('routes.php')->direct(Request::uri(), Request::method());

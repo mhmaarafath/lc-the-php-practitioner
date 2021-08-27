@@ -91,6 +91,13 @@ insert into todos (description, completed) values ('goto store', false);
 
 select * from todos;
 
+
+create table users (id integer PRIMARY KEY AUTO_INCREMENT, name text);
+
+
+
+
+
 PDO is PHP inbuilt class. So we can call directly new PDO();
 
 new PDO('mysql:host=127.0.0.1; dbname=lc_the_php_practitioner', 'root', 'password');
@@ -196,6 +203,9 @@ array_map(function($post){
 //Return only single column to an array
 $names = array_column($posts, 'name');
 
+//will return keys into parameter
+array_keys($array)
+
 
 echo '<pre>';
 var_dump($posts);
@@ -203,4 +213,5 @@ echo '</pre>';
 
 
 
-
+sprintf will assing one->first %s, two->second %s, three->third%s
+sprintf('insert into %s (%s) values (%s)', 'one', 'two', 'three');
