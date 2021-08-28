@@ -1,9 +1,11 @@
 <?php
 
+namespace App\Core\Database;
+
 class Connection {
     public static function make($config){
         try {
-            return new PDO(
+            return new \PDO(
                 $config['type']. ":host=". $config['host']."; dbname=".$config['name'], 
                 $config['username'], 
                 $config['password'],

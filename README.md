@@ -252,3 +252,52 @@ action(...$array);
 Call to a valiable class variable action
 return (new $controller)->$action()
 
+
+Extract method will assing keys into variable.
+$data = ['name' => 'Arafath', 'age' => '12']
+extract($data)
+$name = 'Arafath', $age = 12
+
+php --ineractive 
+This will open php terminal
+
+
+Without namespacing it will clash if we load two classes in same name even from different location 
+
+
+Add namespace
+
+<?php
+
+namespace App\Controllers;
+
+class PagesController {
+
+}
+
+So in other class we can call like
+
+App\Controllers\PagesController everywhere or 
+use App\Controllers\PagesController and we can call as PagesController 
+
+In php 7 we can use below
+
+use App\Core\Router
+use App\Core\Request as
+use App\Core\{Router, Request}
+
+<?php
+
+namespace App\Controllers;
+
+class PagesController {
+	PDO::make()
+	//This will automaticall looking for class inside App\Controllers\PDO
+	//So either we have to use ExactNameSpace\PDO 
+	//Or \PDO to load from top level
+}
+
+
+
+
+

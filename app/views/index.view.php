@@ -4,7 +4,7 @@
             <li><?=ucfirst($user->name)?></li>
         <?php endforeach; ?>
     </ul>
-    <form action="/name" method="POST">
+    <form action="/users" method="POST">
         <input type="text" name="name">
         <button type="submit">Submit</button>
     </form>

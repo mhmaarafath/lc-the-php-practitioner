@@ -1,4 +1,7 @@
 <?php
+
+namespace App\Core\Database;
+
 class QueryBuilder {
     private $pdo;
 
@@ -9,7 +12,7 @@ class QueryBuilder {
     public function selectAll($table){
         $statement = $this->pdo->prepare("select * from $table");
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_CLASS);    
+        return $statement->fetchAll(\PDO::FETCH_CLASS);    
     }
 
     public function insert($table, $params){
