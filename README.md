@@ -240,3 +240,15 @@ public static function bind($key){
 	static::$key;
 }
 
+
+By using swap operator (...) you can pass array data by converting function arguments. 
+$array = ['a', 'b', 'c'];
+public function action($a, $b, $c){
+
+}
+action(...$array);
+
+
+Call to a valiable class variable action
+return (new $controller)->$action()
+
