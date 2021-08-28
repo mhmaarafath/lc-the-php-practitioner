@@ -1,9 +1,8 @@
 <?php
 
-$app = [];
-$app['config'] = require 'config.php';
+App::bind('config', require 'config.php');
+App::bind('database', new QueryBuilder(Connection::make(App::get('config')['database'])));
+
 
 require 'core/functions.php';
 
-$app['database'] = new QueryBuilder(Connection::make($app['config']['database']));
-require Router::load('routes.php')->direct(Request::uri(), Request::method());

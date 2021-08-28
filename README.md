@@ -229,3 +229,14 @@ add below in composer.json file and composer update
     },
 classmap calls all the classes by "./"
 then require 'vendor/autoload.php'; file in index.php
+
+after new class create "composer dump-autoload" this will recheck for new classes
+
+Withing static method we cannot call properties by $this->propery. So we can make property as static as protected static $registry = []. And call static::$property in method
+
+protected static $key;
+
+public static function bind($key){
+	static::$key;
+}
+
