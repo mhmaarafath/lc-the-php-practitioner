@@ -215,3 +215,17 @@ echo '</pre>';
 
 sprintf will assing one->first %s, two->second %s, three->third%s
 sprintf('insert into %s (%s) values (%s)', 'one', 'two', 'three');
+
+
+
+autoload.php will automatically find the path for class files
+
+composer init
+add below in composer.json file and composer update
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+classmap calls all the classes by "./"
+then require 'vendor/autoload.php'; file in index.php

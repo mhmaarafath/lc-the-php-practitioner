@@ -1,0 +1,15 @@
+{
+    "name": "mhmaarafath/php",
+    "authors": [
+        {
+            "name": "mhmaarafath",
+            "email": "mhmaarafath@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "require": {}
+}
